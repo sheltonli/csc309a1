@@ -4,7 +4,7 @@ function draw () {
 }
 
 setInterval(function () {
-	updateinvaders();
+	updateInvaders();
 	updateTank();
 	ctx.clearRect(0,0, 600, 600);
 	draw();
