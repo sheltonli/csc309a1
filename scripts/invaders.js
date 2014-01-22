@@ -15,6 +15,7 @@ function Invader(src, startx, starty) {
 	this.alive = true;
 }
 
+
 function updateInvaders() {
 	//get the first invader that's not dead...
 	//assume he has the max to initialize the loop

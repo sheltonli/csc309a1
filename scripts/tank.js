@@ -1,11 +1,7 @@
-
 //Tank image
-var tankReady = false;
 var tankImage = new Image();
-tankImage.onload = function () {
-	tankReady = true;
-};
 tankImage.src = "images/tank.png";
+
 var tank = {};
 // Handle keyboard controls
 var keysDown = {};
@@ -35,28 +31,16 @@ var updateTank = function () {
 			tank.x += 2;
 		}
 	}
-};
-
-// Draw everything
-var drawTank = function () {
-	if (tankReady) {
-		ctx.drawImage(tankImage, tank.x, tank.y);
+	if (32 in keysDown) {
+		tank.shoot();
 	}
 };
 
-// The main game loop
-//var main = function () {
-	//var now = Date.now();
-	//var delta = now - then;
+tank.shoot = function () {
+	console.log("Pew");
+}
 
-
-	//render();
-
-	//then = now;
-//};
-
-// Let's play this game!
-//initTank();
-//var then = Date.now();
-//setInterval(main, 1); // Execute as fast as possible
-
+// Draw everything
+var drawTank = function () {
+	ctx.drawImage(tankImage, tank.x, tank.y);
+};
