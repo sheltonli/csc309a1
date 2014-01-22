@@ -1,8 +1,10 @@
 var invader1img = new Image();
-invader1img.src = "../images/invader.jpg";
+invader1img.src = "images/invader.jpg";
+
 var invader1x = 100;
 var invader1y = 0;
 var dir = 1;
+
 
 function updateInvaders() {
 	invader1x += dir * 10;
