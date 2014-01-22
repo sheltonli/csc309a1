@@ -26,7 +26,7 @@ addEventListener("keyup", function (e) {
 }, false);
 
 // Reset the game when the player catches a monster
-var reset = function () {
+var initTank = function () {
 	tank.x = 0;
 	tank.y = 536;
 };
@@ -64,7 +64,7 @@ var main = function () {
 };
 
 // Let's play this game!
-reset();
+initTank();
 var then = Date.now();
 setInterval(main, 1); // Execute as fast as possible
 
