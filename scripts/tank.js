@@ -1,19 +1,12 @@
- var canvas = document.getElementById("screen");
- var ctx = canvas.getContext("2d");
 
-// Hero image
+//Tank image
 var tankReady = false;
 var tankImage = new Image();
 tankImage.onload = function () {
 	tankReady = true;
 };
 tankImage.src = "images/tank.png";
-
-// Game objects
-var tank = {
-	speed: 200 // movement in pixels per second
-};
-
+var tank = {};
 // Handle keyboard controls
 var keysDown = {};
 
@@ -25,46 +18,46 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
-// Reset the game when the player catches a monster
+// Initialize tank position
 var initTank = function () {
-	tank.x = 0;
+	tank.x = (canvas.width/2) - 32;
 	tank.y = 536;
 };
 
 // Update game objects
-var update = function (modifier) {
+var updateTank = function () {
 	if (37 in keysDown) { // Player holding left
-		if( (tank.x - tank.speed * modifier) > 0 ){
-			tank.x -= tank.speed * modifier;
+		if( (tank.x - 2) > 0 ){
+			tank.x -= 2;
 		}
 	}
 	if (39 in keysDown) { // Player holding right
-		if( (tank.x + tank.speed * modifier) + 64 < canvas.width ){
-			tank.x += tank.speed * modifier;
+		if( (tank.x + 2) + 64 < canvas.width ){
+			tank.x += 2;
 		}
 	}
 };
 
 // Draw everything
-var render = function () {
+var drawTank = function () {
 	if (tankReady) {
 		ctx.drawImage(tankImage, tank.x, tank.y);
 	}
 };
 
 // The main game loop
-var main = function () {
-	var now = Date.now();
-	var delta = now - then;
+//var main = function () {
+	//var now = Date.now();
+	//var delta = now - then;
 
-	update(delta / 1000);
-	render();
 
-	then = now;
-};
+	//render();
+
+	//then = now;
+//};
 
 // Let's play this game!
-initTank();
-var then = Date.now();
-setInterval(main, 1); // Execute as fast as possible
+//initTank();
+//var then = Date.now();
+//setInterval(main, 1); // Execute as fast as possible
 

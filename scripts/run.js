@@ -1,5 +1,8 @@
+initTank();
+
 setInterval(function () {
-	updateinvaders();
-	updatetank();
-	draw();
+	//updateinvaders();
+	updateTank();
+	drawTank();
+	//draw();
 }, 10);
