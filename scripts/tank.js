@@ -18,11 +18,10 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
-// Initialize tank position
-var initTank = function () {
-	tank.x = (canvas.width/2) - 32;
-	tank.y = 536;
-};
+
+tank.x = (canvas.width/2) - 32;
+tank.y = 536;
+
 
 // Update game objects
 var updateTank = function () {
