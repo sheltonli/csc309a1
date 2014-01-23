@@ -1,8 +1,13 @@
 //Tank image
-var tankImage = new Image();
-tankImage.src = "images/tank.png";
+var src = "images/tank.png";
 
-var tank = {};
+function Tank(src, startx, starty){
+	this.img = new Image();
+	this.img.src = src;
+	this.x = startx;
+	this.y = starty;
+}
+
 // Handle keyboard controls
 var keysDown = {};
 
@@ -15,32 +20,31 @@ addEventListener("keyup", function (e) {
 }, false);
 
 
-tank.x = (canvas.width/2) - 32;
-tank.y = 536;
-
+//Create the player
+var player = new Tank(src, (canvas.width/2) - 32, 536);
 
 // Update game objects
 var updateTank = function () {
 	if (37 in keysDown) { // Player holding left
-		if( (tank.x - 2) > 0 ){
-			tank.x -= 2;
+		if( (player.x - 2) > 0 ){
+			player.x -= 2;
 		}
 	}
 	if (39 in keysDown) { // Player holding right
-		if( (tank.x + 2) + 64 < canvas.width ){
-			tank.x += 2;
+		if( (player.x + 2) + 64 < canvas.width ){
+			player.x += 2;
 		}
 	}
 	if (32 in keysDown) {
-		tank.shoot();
+		player.shoot();
 	}
 };
 
-tank.shoot = function () {
+player.shoot = function () {
 	console.log("Pew");
 }
 
 // Draw everything
 var drawTank = function () {
-	ctx.drawImage(tankImage, tank.x, tank.y);
+	ctx.drawImage(player.img, player.x, player.y);
 };
