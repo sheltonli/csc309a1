@@ -72,6 +72,7 @@ var updateTank = function () {
 };
 
 player.shoot = function (bullet) {
+	bullet.alive = true;
 	bullet.drawx = player.x + 18;
 	bullet.drawy = player.y;
 }
