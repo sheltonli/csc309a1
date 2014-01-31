@@ -82,15 +82,15 @@ var drawTank = function () {
 	ctx.drawImage(player.img, player.x, player.y);
 };
 
-var drawBullets = function(){
+var drawPlayerBullets = function(){
 	for (var i = 0; i < player.bullets.length; i++){
 		if (player.bullets[i].alive){
-			drawBullet(player.bullets[i]);
+			drawPlayerBullet(player.bullets[i]);
 		}
 	}
 }
 
-var drawBullet = function (bullet) {
+var drawPlayerBullet = function (bullet) {
 	bullet.drawy -= bullet.speed;
 	ctx.drawImage(bullet.img, bullet.drawx, bullet.drawy);
 	//if (bullet.drawy < 0){
