@@ -1,7 +1,7 @@
 var src = "images/invader.jpg";
 var src2 = "images/shootinginvader.jpg";
 var dir = 1;
-var speed = 1;
+var speed = .1;
 var invaders = [];
 var leftbound = 0;
 var rightbound = 550;
@@ -12,7 +12,6 @@ for (var i = 0; i < 10; i++){
 	invaderBullets[i] = new Bullet(invaderBulletSrc, 0, 610, 1);
 }
 var shooter;
->>>>>>> 76cf61b75dde897312093c5e11be018bcf0f227d
 makeInvaders();
 
 function Invader(src, startx, starty, canshoot) {
@@ -77,6 +76,8 @@ function updateInvaders() {
 		} else {
 			nextlevel();
 		}
+	} else {
+		done();
 	}
 }
 

@@ -28,13 +28,14 @@ function updateCollisions() {
 	}
 
 
-	for (i=0; i < invader.bullets.length; i++) {
-		if (invader.bullets[i].alive && player.bullets[i].drawy < tank.y + 50 && invader.bullets[i].drawy > tank.y && invader.bullets[i].drawx > tank.x && invader.bullets[i].drawx < tank.x + 50) {
+	for (i=0; i < invaderBullets.length; i++) {
+		if (invaderBullets[i].alive && invaderBullets[i].drawy < player.y + 25  && invaderBullets[i].drawy > player.y && invaderBullets[i].drawx > player.x && invaderBullets[i].drawx < player.x + 39) {
+			invaderBullets[i].alive = false;
 			console.log("hit the tank!");
-			/*tank.lives -= 1;
-			if (tank.lives <= 0) {
-				gameover();
-			}*/
+			player.lives -= 1;
+			if (player.lives <= 0) {
+				done();
+			}
 			
 		}
 	}

@@ -8,6 +8,7 @@ function Tank(src, startx, starty){
 	this.y = starty;
 	this.bullets = [];
 	this.currBullet = 0;
+	this.lives = 3;
 	//Array of 20 bullets
 	for (var i = 0; i < 20; i++){
 		this.bullets[i] = new Bullet(playerBulletSrc, 0, 610, 3);
