@@ -1,10 +1,11 @@
 var src = "images/invader.jpg";
 var src2 = "images/shootinginvader.jpg";
 var dir = 1;
-var speed = .1;
+var speed = 1;
 var invaders = [];
 var leftbound = 0;
 var rightbound = 550;
+var score = 0;
 makeInvaders();
 
 function Invader(src, startx, starty, canshoot) {
@@ -34,33 +35,42 @@ function updateInvaders() {
 		}	
 	}
 
-	if(!levelup) {
-
-		//get the invader that's furthest to the right
-		for (i = 0; i < invaders.length; i++) {
-			if (invaders[i].alive && invaders[i].x > max.x) {
-				max = invaders[i];
-			}	
+	var gameover = false;
+	for (i = 0; i < invaders.length; i++) {
+		if (invaders[i].alive && invaders[i].y > 525) {
+			gameover = true;
 		}
+	}
 
-		//get the invader that's furthest to the left
-		for (i = 0; i < invaders.length; i++) {
-			if (invaders[i].alive && invaders[i].x < min.x) {
-				min = invaders[i];
+	if(!gameover) {
+		if(!levelup) {
+
+			//get the invader that's furthest to the right
+			for (i = 0; i < invaders.length; i++) {
+				if (invaders[i].alive && invaders[i].x > max.x) {
+					max = invaders[i];
+				}	
 			}
-		}
-		
-		if (min.x < leftbound || max.x > rightbound) {
-			dir *= -1;
-			movey = 50;
-		}
 
-		for (i = 0; i < invaders.length; i++) {
-			invaders[i].x += dir * speed;
-			invaders[i].y += movey;
+			//get the invader that's furthest to the left
+			for (i = 0; i < invaders.length; i++) {
+				if (invaders[i].alive && invaders[i].x < min.x) {
+					min = invaders[i];
+				}
+			}
+			
+			if (min.x < leftbound || max.x > rightbound) {
+				dir *= -1;
+				movey = 50;
+			}
+
+			for (i = 0; i < invaders.length; i++) {
+				invaders[i].x += dir * speed;
+				invaders[i].y += movey;
+			}
+		} else {
+			nextlevel();
 		}
-	} else {
-		nextlevel();
 	}
 }
 
