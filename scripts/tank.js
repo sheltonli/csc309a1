@@ -1,7 +1,7 @@
 //Tank image
 var tanksrc = "images/tank.png";
 //Bullet image
-var bulletsrc = "images/bullet.png";
+var bulletsrc = "images/playerbullet.png";
 
 function Tank(src, startx, starty){
 	this.img = new Image();
