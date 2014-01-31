@@ -27,9 +27,13 @@ function restart(){
 	score = 0;
 	speed = .1;
 	invaders = [];
+	for (i=0;i<player.bullets.length; i++) {
+		player.bullets[i].alive=false;
+	}
+	for (i=0;i<invaderBullets.length; i++) {
+		invaderBullets[i].alive=false;
+	}
 	makeInvaders();
 	document.getElementById('game-over').style.display = "none";
 	loop();
-
-
 }
