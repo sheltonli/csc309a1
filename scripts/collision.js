@@ -7,6 +7,12 @@ function updateCollisions() {
 				// kill the alien!
 				invaders[j].alive = false;
 				player.bullets[i].alive = false;	
+				if (invaders[j].canshoot) {
+					if (j - 10 >= 0) {
+						invaders[j-10].canshoot = true;
+						invaders[j-10].img.src = src2;
+					}
+				}
 			}
 		}
 	}

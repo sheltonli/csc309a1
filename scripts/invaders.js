@@ -1,4 +1,5 @@
 var src = "images/invader.jpg";
+var src2 = "images/shootinginvader.jpg";
 var dir = 1;
 var speed = .1;
 var invaders = [];
@@ -6,13 +7,14 @@ var leftbound = 0;
 var rightbound = 550;
 makeInvaders();
 
-function Invader(src, startx, starty) {
+function Invader(src, startx, starty, canshoot) {
 	this.img = new Image();
 	this.img.src = src;
 	this.x = startx;
 	this.y = starty;
 	this.power = 1;
 	this.alive = true;
+	this.canshoot = canshoot;
 }
 
 
@@ -78,9 +80,15 @@ function drawInvaders() {
 }
 
 function makeInvaders() {
-	for (r = 0; r < 5; r++) {
+	num_rows = 5;
+	for (r = 0; r < num_rows; r++) {
 		for (i = 0; i < 10; i++) {
-			invaders.push(new Invader(src, i * 50, r * 50));	
+			if (r < num_rows - 1) {
+				invaders.push(new Invader(src, i * 50, r * 50, false));	
+			} else {
+				invaders.push(new Invader(src2, i * 50, r * 50, true));	
+			}
+			
 		}
 	}	
 }
