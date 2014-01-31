@@ -1,7 +1,5 @@
 //Tank image
 var tanksrc = "images/tank.png";
-//Bullet image
-var bulletsrc = "images/bullet.png";
 
 function Tank(src, startx, starty){
 	this.img = new Image();
@@ -12,24 +10,14 @@ function Tank(src, startx, starty){
 	this.currBullet = 0;
 	//Array of 20 bullets
 	for (var i = 0; i < 20; i++){
-		this.bullets[i] = new Bullet(bulletsrc, 0, 610, 3);
+		this.bullets[i] = new Bullet(playerBulletSrc, 0, 610, 3);
 	}
+	//Boolean to check if tank is allowed to shoot
 	this.shooting;
 }
 
-function Bullet(src, startx, starty, speed){
-	this.img = new Image();
-	this.img.src = bulletsrc;
-	this.x = startx;
-	this.y = starty;
-	this.drawx;
-	this.drawy;
-	this.speed = speed;
-	this.alive = false;
-}
-
 // Handle keyboard controls
-var keyPressed = {};
+var keyPressed = [];
 
 //Places keycode in keyPressed if it is pressed
 addEventListener("keydown", function (e) {
@@ -44,7 +32,6 @@ addEventListener("keyup", function (e) {
 //Create the player
 var player = new Tank(src, (canvas.width/2) - 19.5, 550);
 
-// Update game objects
 var updateTank = function () {
 	//Left
 	if (37 in keyPressed) { 
@@ -81,19 +68,3 @@ player.shoot = function (bullet) {
 var drawTank = function () {
 	ctx.drawImage(player.img, player.x, player.y);
 };
-
-var drawBullets = function(){
-	for (var i = 0; i < player.bullets.length; i++){
-		if (player.bullets[i].alive){
-			drawBullet(player.bullets[i]);
-		}
-	}
-}
-
-var drawBullet = function (bullet) {
-	bullet.drawy -= bullet.speed;
-	ctx.drawImage(bullet.img, bullet.drawx, bullet.drawy);
-	//if (bullet.drawy < 0){
-		//bullet.drawy = 610;
-	//}
-}

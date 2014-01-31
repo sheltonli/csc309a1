@@ -1,7 +1,7 @@
 function draw () {
 	drawInvaders();
 	drawTank();
-	drawBullets();
+	drawPlayerBullets();
 }
 
 setInterval(function () {
