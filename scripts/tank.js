@@ -10,9 +10,9 @@ function Tank(src, startx, starty){
 	this.y = starty;
 	this.bullets = [];
 	this.currentbullet = 0;
-	for (var i = 0; i < 20; i++){
-		this.bullets[this.bullets.length] = new Bullet(bulletsrc, this.x + 18, this.y, 5);
-	}
+	//for (var i = 0; i < 20; i++){
+		//this.bullets[i] = new Bullet(bulletsrc, 0, 610, 3);
+	//}
 }
 
 function Bullet(src, startx, starty, speed){
@@ -20,8 +20,9 @@ function Bullet(src, startx, starty, speed){
 	this.img.src = bulletsrc;
 	this.x = startx;
 	this.y = starty;
+	this.drawx;
+	this.drawy;
 	this.speed = speed;
-	this.alive = false;
 }
 
 // Handle keyboard controls
@@ -40,6 +41,8 @@ addEventListener("keyup", function (e) {
 
 //Create the player
 var player = new Tank(src, (canvas.width/2) - 19.5, 550);
+
+var bullet = new Bullet(bulletsrc, 0, 610, 5);
 
 // Update game objects
 var updateTank = function () {
@@ -62,10 +65,24 @@ var updateTank = function () {
 };
 
 player.shoot = function () {
-	
+	bullet.drawx = player.x + 18;
+	bullet.drawy = player.y;
 }
 
 // Draw the player tank
 var drawTank = function () {
 	ctx.drawImage(player.img, player.x, player.y);
 };
+
+var drawBullet = function () {
+	if (bullet.alive = true){
+		ctx.drawImage(bullet.img, bullet.drawx, bullet.drawy);
+	}
+	//if (bullet.drawy < 0){
+		//bullet.drawy = 610;
+	//}
+}
+
+var updateBullet = function(){
+	bullet.drawy -= bullet.speed;
+}
