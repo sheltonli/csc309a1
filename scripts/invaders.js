@@ -8,6 +8,8 @@ var rightbound = 550;
 var score = 0;
 var invaderBullets = [];
 var invaderBulletsCounter = 0;
+var shooters = [40,41,42,43,44,45,46,47,48,49];
+
 for (var i = 0; i < 10; i++){
 	invaderBullets[i] = new Bullet(invaderBulletSrc, 0, 610, 1);
 }
@@ -110,9 +112,9 @@ function makeInvaders() {
 }
 
 setInterval(function (){
-	shooter = Math.floor((Math.random()*50));
-	if (invaders[shooter].canshoot){
-		shootInvaderBullet(invaderBullets[invaderBulletsCounter],shooter);
+	shooter = Math.floor((Math.random()*10));
+	if (invaders[shooters[shooter]].canshoot && invaders[shooters[shooter]].alive){
+		shootInvaderBullet(invaderBullets[invaderBulletsCounter],shooters[shooter]);
 	}
 }, 1000);
 

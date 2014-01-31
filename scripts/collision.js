@@ -16,6 +16,12 @@ function updateCollisions() {
 							if (invaders[k-10].alive) {
 								invaders[k-10].canshoot = true;
 								invaders[k-10].img.src = src2;
+								for (l=0; l<shooters.length; l++) {
+									if (shooters[l] == k) {
+										shooters[l] = k - 10;
+									}
+
+								}
 								k = -1;
 							} else {
 								k -= 10;
