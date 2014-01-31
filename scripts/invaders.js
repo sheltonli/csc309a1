@@ -57,7 +57,9 @@ function updateInvaders() {
 
 function drawInvaders() {
 	for (i = 0; i < invaders.length; i++) {
+		if (invaders[i].alive) {
 		ctx.drawImage(invaders[i].img , invaders[i].x, invaders[i].y, 50, 50);
+		}
 	}
 }
 
