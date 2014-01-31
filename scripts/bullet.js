@@ -25,7 +25,4 @@ var drawPlayerBullets = function(){
 var drawPlayerBullet = function (bullet) {
 	bullet.drawy -= bullet.speed;
 	ctx.drawImage(bullet.img, bullet.drawx, bullet.drawy);
-	//if (bullet.drawy < 0){
-		//bullet.drawy = 610;
-	//}
 }

@@ -17,7 +17,7 @@ function Tank(src, startx, starty){
 }
 
 // Handle keyboard controls
-var keyPressed = {};
+var keyPressed = [];
 
 //Places keycode in keyPressed if it is pressed
 addEventListener("keydown", function (e) {
