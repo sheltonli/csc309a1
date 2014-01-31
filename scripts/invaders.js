@@ -111,7 +111,7 @@ function makeInvaders() {
 
 setInterval(function (){
 	shooter = Math.floor((Math.random()*50));
-	if (invaders[shooter].canshoot){
+	if (invaders[shooter].canshoot && invaders[shooter].alive){
 		shootInvaderBullet(invaderBullets[invaderBulletsCounter],shooter);
 	}
 }, 1000);
