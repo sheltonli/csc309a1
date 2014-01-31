@@ -5,6 +5,12 @@ var speed = .1;
 var invaders = [];
 var leftbound = 0;
 var rightbound = 550;
+var invaderBullets = [];
+var invaderBulletsCounter = 0;
+for (var i = 0; i < 10; i++){
+	invaderBullets[i] = new Bullet(invaderBulletSrc, 0, 610, 1);
+}
+var shooter;
 makeInvaders();
 
 function Invader(src, startx, starty, canshoot) {
@@ -16,7 +22,6 @@ function Invader(src, startx, starty, canshoot) {
 	this.alive = true;
 	this.canshoot = canshoot;
 }
-
 
 function updateInvaders() {
 	//get the first invader that's not dead...
@@ -70,7 +75,6 @@ function nextlevel() {
 	makeInvaders();
 }
 
-
 function drawInvaders() {
 	for (i = 0; i < invaders.length; i++) {
 		if (invaders[i].alive) {
@@ -91,4 +95,21 @@ function makeInvaders() {
 			
 		}
 	}	
+}
+
+setInterval(function (){
+	shooter = Math.floor((Math.random()*50));
+	if (invaders[shooter].canshoot){
+		shootInvaderBullet(invaderBullets[invaderBulletsCounter],shooter);
+	}
+}, 1000);
+
+function shootInvaderBullet(bullet, position){
+	bullet.alive = true;
+	bullet.drawx = invaders[position].x + 25;
+	bullet.drawy = invaders[position].y + 25;
+	invaderBulletsCounter ++;
+	if (invaderBulletsCounter >= invaderBullets.length - 1){
+		invaderBulletsCounter = 0;
+	}
 }

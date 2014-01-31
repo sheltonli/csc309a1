@@ -25,4 +25,23 @@ var drawPlayerBullets = function(){
 var drawPlayerBullet = function (bullet) {
 	bullet.drawy -= bullet.speed;
 	ctx.drawImage(bullet.img, bullet.drawx, bullet.drawy);
+	if (bullet.drawy < 0){
+		bullet.alive = false;
+	}
+}
+
+var drawInvaderBullets = function(){
+	for (var i = 0; i < invaderBullets.length; i++){
+		if (invaderBullets[i].alive){
+			drawInvaderBullet(invaderBullets[i]);
+		}
+	}
+}
+
+var drawInvaderBullet = function(bullet){
+	bullet.drawy += bullet.speed;
+	ctx.drawImage(bullet.img, bullet.drawx, bullet.drawy);
+	if (bullet.drawy > 600){
+		bullet.alive = false;
+	}
 }

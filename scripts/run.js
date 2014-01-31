@@ -1,6 +1,7 @@
 function draw () {
 	drawInvaders();
 	drawTank();
+	drawInvaderBullets();
 	drawPlayerBullets();
 }
 
