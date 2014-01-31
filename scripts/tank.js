@@ -30,7 +30,7 @@ addEventListener("keyup", function (e) {
 }, false);
 
 //Create the player
-var player = new Tank(src, (canvas.width/2) - 19.5, 550);
+var player = new Tank(tanksrc, (canvas.width/2) - 19.5, 550);
 
 var updateTank = function () {
 	//Left
