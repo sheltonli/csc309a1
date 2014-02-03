@@ -40,6 +40,7 @@ function updateCollisions() {
 			console.log("hit the tank!");
 			player.lives -= 1;
 			if (player.lives <= 0) {
+				player.lives = 0;
 				done();
 			}
 			

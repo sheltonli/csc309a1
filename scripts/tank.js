@@ -7,8 +7,9 @@ function Tank(src, startx, starty){
 	this.x = startx;
 	this.y = starty;
 	this.bullets = [];
-	this.currBullet = 0;
 	this.lives = 3;
+	//Counter to check position in bullet array
+	this.currBullet = 0;
 	//Array of 20 bullets
 	for (var i = 0; i < 20; i++){
 		this.bullets[i] = new Bullet(playerBulletSrc, 0, 610, 3);
@@ -47,6 +48,7 @@ var updateTank = function () {
 		}
 	}
 	//Space
+	//Player is shooting, cycle through array of tank bullets
 	if (32 in keyPressed && player.shooting == false) {
 		player.shooting = true;
 		player.shoot(player.bullets[player.currBullet])
@@ -54,12 +56,14 @@ var updateTank = function () {
 		if (player.currBullet >= player.bullets.length){
 			player.currBullet = 0;
 		}
+	//Prevents player from holding space, only 1 bullet fired for each press
 	} else if (!(32 in keyPressed)) {
 		player.shooting = false;
 	}
 };
 
-player.shoot = function (bullet) {
+//Bullet is set to true, given x and y of tank cannon 
+Tank.prototype.shoot = function (bullet) {
 	bullet.alive = true;
 	bullet.drawx = player.x + 18;
 	bullet.drawy = player.y;

@@ -7,9 +7,11 @@ function draw () {
 
 var gameLoop;
 loop();
+
 function loop (){
 	gameLoop = setInterval(function () {
 	document.getElementById('score').innerHTML = score;
+	document.getElementById('lives').innerHTML = player.lives;
 	updateInvaders();
 	updateCollisions();
 	updateTank();
@@ -19,7 +21,9 @@ function loop (){
 }
 
 function done() {
-	document.getElementById('game-over').style.display = "block";
+	//Shows lives as 0. Line is needed here or else loop stops and says lives is still 1.
+	document.getElementById('lives').innerHTML = player.lives;
+	document.getElementById('gameover').style.display = "block";
 	clearInterval(gameLoop);
 }
 
@@ -34,6 +38,7 @@ function restart(){
 		invaderBullets[i].alive=false;
 	}
 	makeInvaders();
-	document.getElementById('game-over').style.display = "none";
+	player.lives = 3;
+	document.getElementById('gameover').style.display = "none";
 	loop();
 }

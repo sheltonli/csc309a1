@@ -1,5 +1,7 @@
 #mycanvas { display:block; margin:0 auto; background-color:black;}
 
-.gameover {text-align:center; color: red; font-size: 50px; display:none; z-index:1;position:absolute;margin:0 auto; width: 100%; top:3em; }
+#gameover {text-align:center; color: red; font-size: 50px; display:none; z-index:1; position:absolute; width: 99%; top:3em; }
 
-.score {text-align:center; color: red; font-size: 20px; z-index:1;position:absolute;margin:0 auto; width: 100%; }
+.score {text-align:center; color: red; font-size: 20px; position:absolute; margin:0 auto; width: 99%; }
+
+.lives {text-align:center; color: red; font-size: 20px;  position:absolute; margin:0 auto; width: 99%; top:2em;}
