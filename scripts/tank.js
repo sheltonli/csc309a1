@@ -34,6 +34,7 @@ addEventListener("keyup", function (e) {
 //Create the player
 var player = new Tank(tanksrc, (canvas.width/2) - 19.5, 550);
 
+//Update the player tank according to what keys are pressed
 var updateTank = function () {
 	//Left
 	if (37 in keyPressed) { 
