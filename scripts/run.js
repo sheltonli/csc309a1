@@ -1,3 +1,5 @@
+//Calls to all other draw functions
+//Draws all of the game assets
 function draw () {
 	drawInvaders();
 	drawTank();
@@ -5,9 +7,15 @@ function draw () {
 	drawPlayerBullets();
 }
 
+//Game loop that will handle running the game
 var gameLoop;
+//Starts the game
 loop();
 
+//This function runs the game
+//Continously update the score and lives remaining
+//Continuously update game assets by calling their update functions
+//Clear and redraw canvas by calling the draw function
 function loop (){
 	gameLoop = setInterval(function () {
 	document.getElementById('score').innerHTML = score;
@@ -21,6 +29,7 @@ function loop (){
 }, 10);
 }
 
+//Happens when game over, displays game over menu and stops the game loop
 function done() {
 	//Shows lives as 0. Line is needed here or else loop stops and says lives is still 1.
 	document.getElementById('lives').innerHTML = player.lives;
@@ -28,6 +37,10 @@ function done() {
 	clearInterval(gameLoop);
 }
 
+//Restarts the game by initializing certain game assets again
+//Removes all bullets that are in play
+//Remakes invaders
+//Remove game over menu and call the game loop again
 function restart(){
 	level = 1;
 	score = 0;

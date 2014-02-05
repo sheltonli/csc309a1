@@ -1,7 +1,7 @@
 //Tank image
 var tanksrc = "images/tank.png";
 
-function Tank(src, startx, starty){
+function Tank(startx, starty){
 	this.img = new Image();
 	this.img.src = tanksrc;
 	this.x = startx;
@@ -32,8 +32,9 @@ addEventListener("keyup", function (e) {
 }, false);
 
 //Create the player
-var player = new Tank(tanksrc, (canvas.width/2) - 19.5, 550);
+var player = new Tank((canvas.width/2) - 19.5, 550);
 
+//Update the player tank according to what keys are pressed
 var updateTank = function () {
 	//Left
 	if (37 in keyPressed) { 
