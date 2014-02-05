@@ -1,7 +1,15 @@
+#game {
+	width: 600px;
+	height: 600px;
+	position: relative;
+	margin: 0 auto;
+}
 #mycanvas { display:block; margin:0 auto; background-color:black;}
 
 #gameover {text-align:center; color: red; font-size: 50px; display:none; z-index:1; position:absolute; width: 99%; top:3em; }
 
-.score {text-align:center; color: red; font-size: 20px; position:absolute; margin:0 auto; width: 99%; }
+.score {text-align:center; color: red; font-size: 20px; position:absolute; top: 0px; left: 0px;}
 
-.lives {text-align:center; color: red; font-size: 20px;  position:absolute; margin:0 auto; width: 99%; top:2em;}
+.lives {text-align:center; color: red; font-size: 20px;  position:absolute; bottom: 0px; right: 0px;}
+
+.level {text-align:center; color: red; font-size: 20px;  position:absolute; bottom: 0px; left: 0px;}

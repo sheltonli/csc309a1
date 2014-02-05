@@ -12,6 +12,7 @@ function loop (){
 	gameLoop = setInterval(function () {
 	document.getElementById('score').innerHTML = score;
 	document.getElementById('lives').innerHTML = player.lives;
+	document.getElementById('level').innerHTML = level;
 	updateInvaders();
 	updateCollisions();
 	updateTank();
@@ -28,6 +29,7 @@ function done() {
 }
 
 function restart(){
+	level = 1;
 	score = 0;
 	speed = .1;
 	invaders = [];

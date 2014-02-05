@@ -8,17 +8,20 @@
 	</head>
 
 	<body>
-		<div class="score">Score: <span id="score"></span></div>
-		<div id="gameover">Game Over<p><span onclick="restart()">Restart</span></p></div>
-		<div class="lives">Lives: <span id="lives"></span></div>
-		<canvas id="mycanvas" width='600' height='600'>Your browser can not run this game. (No canvas support)</canvas>
-		<script type="text/javascript" src="scripts/init.js"></script>
-		<script type="text/javascript" src="scripts/bullet.js"></script>
-		<script type="text/javascript" src="scripts/invaders.js"></script>
-		<script type="text/javascript" src="scripts/collision.js"></script>
-		<script type="text/javascript" src="scripts/tank.js"></script>
-		<script type="text/javascript" src="scripts/run.js"></script>
-		<audio loop="loop" autoplay="autoplay" src="soundtrack.mp3"/>
+		<div id="game">
+			<div class="score">Score: <span id="score"></span></div>
+			<div id="gameover">Game Over<p><span onclick="restart()">Restart</span></p></div>
+			<div class="lives">Lives: <span id="lives"></span></div>
+			<div class="level">Level: <span id="level"></span></div>
+			<canvas id="mycanvas" width='600' height='600'>Your browser can not run this game. (No canvas support)</canvas>
+			<script type="text/javascript" src="scripts/init.js"></script>
+			<script type="text/javascript" src="scripts/bullet.js"></script>
+			<script type="text/javascript" src="scripts/invaders.js"></script>
+			<script type="text/javascript" src="scripts/collision.js"></script>
+			<script type="text/javascript" src="scripts/tank.js"></script>
+			<script type="text/javascript" src="scripts/run.js"></script>
+			<audio loop="loop" autoplay="autoplay" src="soundtrack.mp3"/>
+		</div>
 	</body>
 
 </html>
