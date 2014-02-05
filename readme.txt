@@ -42,7 +42,8 @@ Bullet - Functions
 	drawInvaderBullet - Continously draw the bullet going down the screen by inreasing it's y value. If it passes the bottom of the canvas, it is no longer active.
 
 Invaders
+	invaders.js contains the type definition for the Invader objects.  This is also where we create the invaders, update them on the screen so they move around properly, check to see if they are all dead in order to go to the next level, shoot bullets from the invaders, and initialize which invaders can shoot.
 
 
 Collision
-
+	in collision.js we check to see if any collisions occur between bullets shot from the tank at the invaders as well as bullets shot from the invaders at the tank. We limited the number of invaders that could shoot to 10.  Once one of them dies we handle updating the next invader which can shoot in this file.
