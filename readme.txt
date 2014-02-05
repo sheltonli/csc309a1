@@ -1,3 +1,6 @@
+Will Armstrong william.armstrong@mail.utoronto.ca
+Shelton Li shelton_li@hotmail.com
+
 How the game runs
 	
 	Our game is run in a loop (the loop function). We assign the loop function to a variable named gameLoop. 
