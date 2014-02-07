@@ -1,5 +1,5 @@
-Will Armstrong william.armstrong@mail.utoronto.ca
-Shelton Li shelton_li@hotmail.com
+Will Armstrong 993418789
+Shelton Li 999009905 
 
 How the game runs
 	
@@ -50,3 +50,9 @@ Invaders
 
 Collision
 	in collision.js we check to see if any collisions occur between bullets shot from the tank at the invaders as well as bullets shot from the invaders at the tank. We limited the number of invaders that could shoot to 10.  Once one of them dies we handle updating the next invader which can shoot in this file.
+
+Soundtrack by Will Armstrong made with PixiTracker 1-bit sequencer for Android
+
+Images from:
+http://pripie.deviantart.com/art/Space-Invaders-Enemy-type-1-154010296
+http://www.google.ca/imgres?biw=994&bih=859&tbm=isch&tbnid=acC4HGzfPPSA9M%3A&imgrefurl=http%3A%2F%2Fdlgames.square-enix.com%2Fsiig%2F&docid=waRc8C3Ar-kefM&imgurl=http%3A%2F%2Fdlgames.square-enix.com%2Fsiig%2Fimg%2Fred.jpg&w=310&h=280&ei=YiH1Ut3oIYnCywHM94CYDA&zoom=1&ved=0CFcQhBwwAg&iact=rc&dur=279&page=1&start=0&ndsp=18
